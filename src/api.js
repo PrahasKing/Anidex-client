@@ -1,4 +1,4 @@
 export const API_BASE =
-  "http://localhost:5000";
+  "https://anidex-server.up.railway.app";
 
 export default API_BASE;
