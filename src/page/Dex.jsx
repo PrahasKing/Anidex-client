@@ -23,9 +23,6 @@ export default function Dex() {
     const handleLogout = () => {
         localStorage.removeItem('currentUser');
         setUser(null);
-        setP(0); // Reset to home page
-        location.reload();
-        try { history.pushState({}, '', '/home'); } catch (e) { /* ignore */ }
         location.reload();
     };
 
