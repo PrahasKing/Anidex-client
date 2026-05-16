@@ -1,0 +1,575 @@
+:root {
+  margin: 0;
+}
+
+body {
+  margin: 0;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('./assets/bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(5px);
+  transform: scale(1.05);
+  z-index: -1;
+}
+
+#root {
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* ========== HEADER ========== */
+
+.Header {
+  background-color: rgba(36, 36, 36, 0.85);
+  backdrop-filter: blur(100px);
+  -webkit-backdrop-filter: blur(100px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.header-left {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+  display: block;
+  transition: opacity 0.2s ease;
+}
+
+.logo:hover {
+  opacity: 0.7;
+}
+
+.header-center {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+  min-width: 0;
+}
+
+.header-center input {
+  width: 100%;
+  max-width: 500px;
+  height: 42px;
+  border-radius: 8px;
+  background-color: rgb(57, 52, 52);
+  border: 2px solid #000000;
+  padding: 0 14px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  color: white;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.header-center input::placeholder {
+  color: #888;
+}
+
+.header-center input:hover {
+  border-color: #ffffff79;
+}
+
+.header-center input:focus {
+  outline: none;
+  border-color: #78d6fb79;
+}
+
+.header-right {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  white-space: nowrap;
+}
+
+/* ========== NAVBAR ========== */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px;
+  border-radius: 40px;
+  background: rgba(25, 25, 35, 0.55);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.nav-btn {
+  border: none;
+  outline: none;
+  padding: 8px 18px;
+  border-radius: 30px;
+  background: transparent;
+  color: #d8d8d8;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  white-space: nowrap;
+}
+
+.nav-btn:hover {
+  color: black;
+  background: rgb(100, 100, 100);
+}
+
+.nav-btn.glow {
+  background: white !important;
+  color: black !important;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 35px rgba(255, 255, 255, 0.048);
+}
+
+/* ========== USER PILL ========== */
+
+.user-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 14px;
+  border-radius: 30px;
+  background: rgba(120, 214, 251, 0.15);
+  border: 1px solid rgba(120, 214, 251, 0.3);
+  white-space: nowrap;
+}
+
+.user-name {
+  color: #78D6FB;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.logout-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ff6b6b;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.logout-btn:hover {
+  background: rgba(255, 107, 107, 0.2);
+  border-color: #ff6b6b;
+}
+
+/* ========== LOADING MORE (infinite scroll) ========== */
+.loading-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #ffffff;
+  padding: 14px 0 28px 0;
+}
+
+.loading-more p {
+  margin: 0;
+  font-size: 16px;
+  color: #dfefff;
+}
+
+.loading-spinner {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 3px solid rgba(255,255,255,0.18);
+  border-top-color: #78D6FB;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ========== CONTAINER ========== */
+
+.Container {
+  justify-content: center;
+  text-align: center;
+  margin-top: 90px;
+  padding: 20px;
+  align-items: center;
+}
+
+.Container div {
+  gap: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow-y: auto;
+}
+
+.Container h5 {
+  color: white;
+  font-size: 20px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* ========== ANIME CARDS ========== */
+
+.animecard {
+  width: 250px;
+  height: 550px;
+  border-radius: 8px;
+  border-width: 20px;
+  background-color: #15223286;
+  color: white;
+  margin: 20px;
+  backdrop-filter: blur(100px);
+  -webkit-backdrop-filter: blur(100px);
+  transition: all 0.3s ease-in-out;
+}
+
+.animecard:hover {
+  background-color: #9faab88e;
+  cursor: pointer;
+  outline: none;
+  border-color: #000000;
+}
+
+.animecard h2 {
+  padding: 10px;
+  transition: 0.3s ease-in-out;
+}
+
+.animecard button {
+  width: 100%;
+  height: 40px;
+  border-radius: 8px;
+  background-color: transparent;
+  border: none;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: white;
+  margin-bottom: 0px;
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+}
+
+.animecard button:hover {
+    background: white !important;
+  color: black !important;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 35px rgba(255, 255, 255, 0.048);
+}
+
+/* Card action buttons */
+.card-actions{
+  display:flex;
+  gap:8px;
+  width:100%;
+}
+
+.card-actions button{
+  flex:1;
+  height:36px;
+  border-radius:8px;
+  border:none;
+  cursor:pointer;
+  font-weight:600;
+  font-size:14px;
+  padding: 0 10px;
+  line-height:36px;
+  white-space:nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: background-color 180ms ease, color 180ms ease, transform 120ms ease, box-shadow 180ms ease;
+}
+
+/* subtle hover lift for action buttons */
+.card-actions button:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.28);
+}
+
+.watch-btn{
+  margin-top: 3px;
+  background: rgba(48, 73, 80, 0.6);
+  color: #fff;
+}
+
+.watch-btn:hover{ background: rgba(48,73,80,0.8); }
+
+.watch-btn.saved{
+  background: #78D6FB;
+  color: #000;
+}
+
+.watch-btn.saved:hover{ background: #5fd0fb; }
+
+.wish-btn{
+  margin-top: 3px;
+  background: rgba(120, 214, 251, 0.12);
+  color: #78D6FB;
+  border: 1px solid rgba(120,214,251,0.25);
+}
+
+.wish-btn:hover{ background: rgba(120,214,251,0.18); }
+
+.wish-btn.wishlisted{
+  background: #ffefc2;
+  color: #b35a00;
+  border-color: #ffdb7a;
+}
+
+.wish-btn.wishlisted:hover{ background: #ffebad; }
+
+.anime-title {
+  width: 250px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 0px;
+  font-size: 18px;
+  text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.anime-title2 {
+  width: 250px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 0px;
+  font-size: 25px;
+  text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* ========== TYPOGRAPHY ========== */
+
+.Wat {
+  color: white;
+  font-size: 50px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h1, h2 {
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: 56px;
+  letter-spacing: -1.68px;
+  margin: 32px 0;
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 118%;
+  letter-spacing: -0.24px;
+  margin: 0 0 8px;
+}
+
+p {
+  margin: 0;
+}
+
+/* ========== LOGIN PAGE ========== */
+
+.login-overlay {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.login-card {
+  background: rgba(21, 34, 50, 0.85);
+  backdrop-filter: blur(100px);
+  -webkit-backdrop-filter: blur(100px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+.login-logo {
+  margin-bottom: 20px;
+}
+
+.login-title {
+  color: white;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.login-input-group {
+  width: 100%;
+}
+
+.login-input {
+  width: 100%;
+  height: 48px;
+  border-radius: 8px;
+  background-color: rgb(57, 52, 52);
+  border: 2px solid #000000;
+  padding: 0 14px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  color: white;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.login-input::placeholder {
+  color: #888;
+}
+
+.login-input:hover {
+  border-color: #ffffff79;
+}
+
+.login-input:focus {
+  outline: none;
+  border-color: #78d6fb79;
+}
+
+.login-error {
+  color: #ff6b6b;
+  font-size: 14px;
+  margin: 0;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.login-btn {
+  width: 100%;
+  height: 48px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #78D6FB 0%, #4facfe 100%);
+  border: none;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #152232;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-top: 8px;
+}
+
+.login-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(120, 214, 251, 0.4);
+}
+
+.login-switch {
+  color: #aaa;
+  font-size: 14px;
+  margin-top: 20px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.login-switch-btn {
+  background: none;
+  border: none;
+  color: #78D6FB;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: underline;
+  padding: 0;
+  margin-left: 4px;
+}
+
+.login-switch-btn:hover {
+  color: #a8e6ff;
+}
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 36px;
+    margin: 20px 0;
+  }
+  h2 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .Header {
+    padding: 0 12px;
+    height: auto;
+    min-height: 70px;
+    flex-wrap: wrap;
+  }
+  
+  .header-center {
+    order: 3;
+    flex-basis: 100%;
+    padding: 8px 0 0 0;
+  }
+  
+  .header-center input {
+    max-width: none;
+  }
+  
+  .navbar {
+    gap: 4px;
+    padding: 4px;
+  }
+  
+  .nav-btn {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+  
+  .user-pill {
+    padding: 4px 10px;
+  }
+  
+  .user-name {
+    font-size: 12px;
+  }
+}
